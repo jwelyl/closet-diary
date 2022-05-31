@@ -1,0 +1,64 @@
+{{>layout/header}}
+<h1>스프링 부트로 시작하는 웹 서비스</h1>
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-md-6">
+            <a href="/picture/save" role="button" class="btn btn-primary">사진 정보 등록</a>
+        </div>
+        <div class="col-md-6">
+            <a href="/clothes/save" role="button" class="btn btn-primary">옷 정보 등록</a>
+        </div>
+    </div>
+    <br>
+    <!-- 사진 목록 출력 영역 -->
+    <table class="table table-horizontal table-bordered">
+        <thead class="thead-strong">
+        <tr>
+            <th>원본 사진 이름</th>
+            <th>사진 이름</th>
+            <th>사진 경로</th>
+            <th>사진 크기</th>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+        {{#picture}}
+            <tr>
+                <td>{{originFileName}}</td>
+                <td><a href="/picture/update/{{id}}">{{fileName}}</a></td>
+                <td>{{filePath}}</td>
+                <td>{{fileSize}}</td>
+            </tr>
+        {{/picture}}
+        </tbody>
+    </table>
+
+    <!-- 옷 목록 출력 영역 -->
+    <table class="table table-horizontal table-bordered">
+        <thead class="thead-strong">
+        <tr>
+            <th>옷 이름</th>
+            <th>옷 카테고리</th>
+            <th>옷 브랜드</th>
+            <th>옷 구매날짜</th>
+            <th>옷 가격</th>
+            <th>옷 원본 사진 이름</th>
+            <th>옷 사진 경로</th>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+        {{#clothes}}
+            <tr>
+                <td><a href="/clothes/update/{{id}}">{{name}}</a></td>
+                <td>{{category}}</td>
+                <td>{{brand}}</td>
+                <td>{{purchaseDate}}</td>
+                <td>{{price}}</td>
+                <td>{{originPicName}}</td>
+                <td>{{picPath}}</td>
+            </tr>
+        {{/clothes}}
+        </tbody>
+    </table>
+</div>
+
+{{>layout/footer}}

@@ -1,0 +1,32 @@
+{{>layout/header}}
+<h1>사진 정보 수정</h1>
+<div class="col-md-12">
+    <div class="col-md-4">
+        <form>
+            <div class="form-group">
+                <label for="id">사진 id</label>
+                <input type="text" class="form-control" id="id" value="{{picture.id}}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="origin-file-name">원본 사진 이름</label>
+                <input type="text" class="form-control" id="origin-file-name" value="{{picture.originFileName}}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="file-name">서버에 저장된 사진 이름</label>
+                <input type="text" class="form-control" id="file-name" value="{{picture.fileName}}">
+            </div>
+            <div class="form-group">
+                <label for="file-path">서버에 저장된 사진 경로</label>
+                <input type="text" class="form-control" id="file-path" value="{{picture.filePath}}">
+            </div>
+            <div class="form-group">
+                <label for="file-size">사진 크기</label>
+                <input type="text" class="form-control" id="file-size" value="{{picture.fileSize}}" readonly>
+            </div>
+        </form>
+        <a href="/" role="button" class="btn btn-secondary">취소</a>
+        <button type="button" class="btn btn-primary" id="btn-update-picture">수정 완료</button>
+        <button type="button" class="btn btn-danger" id="btn-delete-picture">삭제</button>
+    </div>
+</div>
+{{>layout/footer}}

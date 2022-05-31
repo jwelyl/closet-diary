@@ -1,0 +1,28 @@
+{{>layout/header}}
+<h1>사진 정보 등록</h1>
+
+<div class="col-md-12">
+    <div class="col-md-4">
+        <form>
+            <div class="form-group">
+                <label for="origin-file-name">원본 사진 이름</label>
+                <input type="text" class="form-control" id="origin-file-name" placeholder="원본 사진 이름을 입력하세요">
+            </div>
+            <div class="form-group">
+                <label for="file-name">서버에 저장된 사진 이름</label>
+                <input type="text" class="form-control" id="file-name" placeholder="서버에 저장된 사진 이름을 입력하세요">
+            </div>
+            <div class="form-group">
+                <label for="file-path">서버에 저장된 사진 경로</label>
+                <input type = "text" class="form-control" id="file-path" placeholder="서버에 저장된 사진 경로를 입력하세요."></input>
+            </div>
+            <div class="form-group">
+                <label for="file-size">사진 크기</label>
+                <input type = "number" class="form-control" id="file-size" placeholder="서버에 저장된 사진 크기를 입력하세요."></input>
+            </div>
+            <a href="/" role="button" class="btn btn-secondary">취소</a>
+            <button type="button" class="btn btn-primary" id="btn-save-picture">등록</button>
+        </form>
+    </div>
+</div>
+{{>layout/footer}}

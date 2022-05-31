@@ -1,0 +1,44 @@
+{{>layout/header}}
+<h1>사진 정보 수정</h1>
+<div class="col-md-12">
+    <div class="col-md-4">
+        <form>
+            <div class="form-group">
+                <label for="id">옷 id</label>
+                <input type="text" class="form-control" id="id" value="{{clothes.id}}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="name">옷 이름</label>
+                <input type="text" class="form-control" id="name" value="{{clothes.name}}">
+            </div>
+            <div class="form-group">
+                <label for="category">옷 카테고리</label>
+                <input type="text" class="form-control" id="category" value="{{clothes.category}}">
+            </div>
+            <div class="form-group">
+                <label for="brand">옷 브랜드</label>
+                <input type="text" class="form-control" id="brand" value="{{clothes.brand}}">
+            </div>
+            <div class="form-group">
+                <label for="purchase-date">구매일</label>
+                <input type="date" class="form-control" id="purchase-date" value="{{clothes.purchaseDate}}">
+            </div>
+            <div class="form-group">
+                <label for="price">옷 가격</label>
+                <input type = "number" class="form-control" id="price" value="{{clothes.price}}">
+            </div>
+            <div class="form-group">
+                <label for="origin-pic-name">옷 사진 이름</label>
+                <input type="text" class="form-control" id="origin-pic-name" value="{{clothes.originPicName}}">
+            </div>
+            <div class="form-group">
+                <label for="pic-path">옷 사진 경로</label>
+                <input type="text" class="form-control" id="pic-path" value="{{clothes.picPath}}">
+            </div>
+        </form>
+        <a href="/" role="button" class="btn btn-secondary">취소</a>
+        <button type="button" class="btn btn-primary" id="btn-update-clothes">수정 완료</button>
+        <button type="button" class="btn btn-danger" id="btn-delete-clothes">삭제</button>
+    </div>
+</div>
+{{>layout/footer}}

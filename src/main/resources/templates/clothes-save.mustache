@@ -1,0 +1,40 @@
+{{>layout/header}}
+<h1>옷 정보 등록</h1>
+
+<div class="col-md-12">
+    <div class="col-md-4">
+        <form>
+            <div class="form-group">
+                <label for="name">옷 이름</label>
+                <input type="text" class="form-control" id="name" placeholder="옷 이름을 입력하세요">
+            </div>
+            <div class="form-group">
+                <label for="category">옷 카테고리</label>
+                <input type="text" class="form-control" id="category" placeholder="옷 브랜드를 입력하세요">
+            </div>
+            <div class="form-group">
+                <label for="brand">옷 브랜드</label>
+                <input type="text" class="form-control" id="brand" placeholder="옷 브랜드를 입력하세요">
+            </div>
+            <div class="form-group">
+                <label for="purchase-date">구매일</label>
+                <input type="date" class="" id="purchase-date" placeholder="구매일을 입력하세요."></input>
+            </div>
+            <div class="form-group">
+                <label for="price">옷 가격</label>
+                <input type = "number" class="form-control" id="price" placeholder="옷 가격을 입력하세요."></input>
+            </div>
+            <div class="form-group">
+                <label for="origin-pic-name">옷 사진 이름</label>
+                <input type="text" class="form-control" id="origin-pic-name" placeholder="옷 사진 이름을 입력하세요">
+            </div>
+            <div class="form-group">
+                <label for="pic-path">옷 사진 경로</label>
+                <input type="text" class="form-control" id="pic-path" placeholder="옷 사진 경로를 입력하세요">
+            </div>
+            <a href="/" role="button" class="btn btn-secondary">취소</a>
+            <button type="button" class="btn btn-primary" id="btn-save-clothes">등록</button>
+        </form>
+    </div>
+</div>
+{{>layout/footer}}
