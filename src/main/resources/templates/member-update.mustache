@@ -1,0 +1,28 @@
+{{>layout/header}}
+<h1>멤버 정보 수정</h1>
+<div class="col-md-12">
+    <div class="col-md-4">
+        <form>
+            <div class="form-group">
+                <label for="id">멤버 id</label>
+                <input type="text" class="form-control" id="id" value="{{member.id}}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="member-name">멤버 이름</label>
+                <input type="text" class="form-control" id="member-name" value="{{member.name}}">
+            </div>
+            <div class="form-group">
+                <label for="member-age">멤버 나이</label>
+                <input type="number" class="form-control" id="member-age" value="{{member.age}}">
+            </div>
+            <div class="form-group">
+                <label for="member-address">멤버 주소</label>
+                <input type="text" class="form-control" id="member-address" value="{{member.address}}">
+            </div>
+        </form>
+        <a href="/" role="button" class="btn btn-secondary">취소</a>
+        <button type="button" class="btn btn-primary" id="btn-update-member">수정 완료</button>
+        <button type="button" class="btn btn-danger" id="btn-delete-member">삭제</button>
+    </div>
+</div>
+{{>layout/footer}}

@@ -8,6 +8,9 @@
         <div class="col-md-6">
             <a href="/clothes/save" role="button" class="btn btn-primary">옷 정보 등록</a>
         </div>
+        <div class="col-md-6">
+            <a href="/member/save" role="button" class="btn btn-primary">멤버 정보 등록</a>
+        </div>
     </div>
     <br>
     <!-- 사진 목록 출력 영역 -->
@@ -57,6 +60,26 @@
                 <td>{{picPath}}</td>
             </tr>
         {{/clothes}}
+        </tbody>
+    </table>
+
+    <!-- 멤버 목록 출력 영역 -->
+    <table class="table table-horizontal table-bordered">
+        <thead class="thead-strong">
+        <tr>
+            <th>멤버 이름</th>
+            <th>멤버 나이</th>
+            <th>멤버 주소</th>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+        {{#member}}
+            <tr>
+                <td><a href="/member/update/{{id}}">{{name}}</a></td>
+                <td>{{age}}</td>
+                <td>{{address}}</td>
+            </tr>
+        {{/member}}
         </tbody>
     </table>
 </div>

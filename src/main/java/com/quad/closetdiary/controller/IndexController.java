@@ -1,8 +1,10 @@
 package com.quad.closetdiary.controller;
 
 import com.quad.closetdiary.controller.dto.clothes.ClothesResponseDto;
+import com.quad.closetdiary.controller.dto.member.MemberResponseDto;
 import com.quad.closetdiary.controller.dto.picture.PictureResponseDto;
 import com.quad.closetdiary.service.ClothesService;
+import com.quad.closetdiary.service.MemberService;
 import com.quad.closetdiary.service.PictureService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -15,11 +17,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 public class IndexController {
     private final PictureService pictureService;
     private final ClothesService clothesService;
+    private final MemberService memberService;
 
     @GetMapping("/")
     public String index(Model model) {
         model.addAttribute("picture", pictureService.findAll());
         model.addAttribute("clothes", clothesService.findAll());
+        model.addAttribute("member", memberService.findAll());
 
         return "index";
     }
@@ -44,5 +48,16 @@ public class IndexController {
         model.addAttribute("clothes", dto);
 
         return "clothes-update";
+    }
+
+    @GetMapping("/member/save")
+    public String memberSave() {return "member-save";}
+
+    @GetMapping("/member/update/{id}")
+    public String memberUpdate(@PathVariable Long id, Model model) {
+        MemberResponseDto dto = memberService.findById(id);
+        model.addAttribute("member", dto);
+
+        return "member-update";
     }
 }
