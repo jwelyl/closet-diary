@@ -3,9 +3,12 @@ package com.quad.closetdiary.controller;
 import com.quad.closetdiary.controller.dto.member.MemberResponseDto;
 import com.quad.closetdiary.controller.dto.member.MemberSaveRequestDto;
 import com.quad.closetdiary.controller.dto.member.MemberUpdateRequestDto;
+import com.quad.closetdiary.domain.member.Member;
 import com.quad.closetdiary.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
@@ -31,5 +34,10 @@ public class MemberApiController {
     public Long delete(@PathVariable Long id) {
         memberService.delete(id);
         return id;
+    }
+
+    @GetMapping("/api/v1/member")
+    List<Member> all() {
+        return memberService.all().findAll();
     }
 }

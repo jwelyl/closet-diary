@@ -53,4 +53,9 @@ public class MemberService {
                 .orElseThrow(() -> new IllegalArgumentException("해당 멤버가 없습니다. id=" + id));
         memberRepository.delete(member);
     }
+
+    @Transactional(readOnly = true)
+    public MemberRepository all() {
+        return memberRepository;
+    }
 }
