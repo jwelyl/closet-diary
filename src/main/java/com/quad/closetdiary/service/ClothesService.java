@@ -6,6 +6,7 @@ import com.quad.closetdiary.controller.dto.clothes.ClothesSaveRequestDto;
 import com.quad.closetdiary.controller.dto.clothes.ClothesUpdateRequestDto;
 import com.quad.closetdiary.domain.clothes.Clothes;
 import com.quad.closetdiary.domain.clothes.ClothesRepository;
+import com.quad.closetdiary.domain.member.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -49,5 +50,9 @@ public class ClothesService {
     public void delete(Long id) {
         Clothes clothes = clothesRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id=" + id));
         clothesRepository.delete(clothes);
+    }
+
+    public ClothesRepository getClothesRepository() {
+        return clothesRepository;
     }
 }

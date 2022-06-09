@@ -67,8 +67,7 @@ public class MemberService {
         memberRepository.delete(member);
     }
 
-    @Transactional(readOnly = true)
-    public MemberRepository all() {
+    public MemberRepository getMemberRepository() {
         return memberRepository;
     }
 }

@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor  //  기본 생성자 생성
 @Entity
-public class Picture /*extends BaseTimeEntity*/ {
+public class Picture extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -35,8 +35,8 @@ public class Picture /*extends BaseTimeEntity*/ {
         this.fileSize = fileSize;
     }
 
-    public void update(String name, String path) {
-        this.fileName = name;
-        this.filePath = path;
+    public void update(String fileName, String filePpath) {
+        this.fileName = fileName;
+        this.filePath = filePath;
     }
 }

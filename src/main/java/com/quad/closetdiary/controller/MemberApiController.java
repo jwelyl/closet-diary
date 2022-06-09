@@ -10,6 +10,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
+
+import static java.lang.Integer.parseInt;
 
 @RequiredArgsConstructor
 @RestController
@@ -51,5 +54,53 @@ public class MemberApiController {
     public List<MemberListResponseDto> all() {
         System.out.println(STR + "모두 조회" );
         return memberService.findAll();
+    }
+
+    /* 추가 API */
+    @PostMapping("/member/insert")  //  insert one
+    public Member insert(@RequestBody Map<String, String> map) {
+        Member m = Member.builder()
+                .name(map.get("name"))
+                .age(stringToInt(map.get("age")))
+                .address(map.get("address"))
+                .build();
+
+        return memberService.getMemberRepository().save(m);
+    }
+
+    @GetMapping("/member/select")   //  select all
+    public List<Member> selectAll() {
+        return memberService.getMemberRepository().findAll();
+    }
+
+    @GetMapping("/member/select/{id}")  //  select one
+    public Member selectOne(@PathVariable("id") Long id, @RequestBody Map<String, String> map) {
+        Member m = memberService.getMemberRepository().findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("해당 멤버가 없습니다. id=" + id));
+        return m;
+    }
+
+    @PutMapping("/member/modify/{id}")  //  update
+    public Member updateOne(@PathVariable("id") Long id, @RequestBody Map<String, String> map) {
+        Member m = memberService.getMemberRepository().findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("해당 멤버가 없습니다. id=" + id));
+
+        m.update(map.get("name"), stringToInt(map.get("age")), map.get("address"));
+        return memberService.getMemberRepository().save(m);
+    }
+
+    @DeleteMapping("/member/remove/{id}")   //  delete
+    public Long deleteOne(@PathVariable("id") Long id) {
+        memberService.getMemberRepository().deleteById(id);
+        return id;
+    }
+
+    private Integer stringToInt(String age) {
+        try {
+            return Integer.parseInt(age);
+        } catch(ClassCastException e) {
+            e.printStackTrace();
+            return 0;
+        }
     }
 }

@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @Getter
 @NoArgsConstructor  //  기본 생성자 생성
 @Entity
-public class Member {
+public class Member extends BaseTimeEntity {
     @Transient
     private final String STR = "\nMember class\n";
 

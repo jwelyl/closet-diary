@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @Getter
 @NoArgsConstructor  //  기본 생성자 생성
 @Entity             //  Database Table (Clothes -> clothes table)
-public class Clothes /*extends BaseTimeEntity*/ {
+public class Clothes extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;    //  Primary Key

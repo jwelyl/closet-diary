@@ -4,6 +4,7 @@ import com.quad.closetdiary.controller.dto.picture.PictureListResponseDto;
 import com.quad.closetdiary.controller.dto.picture.PictureResponseDto;
 import com.quad.closetdiary.controller.dto.picture.PictureSaveRequestDto;
 import com.quad.closetdiary.controller.dto.picture.PictureUpdateRequestDto;
+import com.quad.closetdiary.domain.clothes.ClothesRepository;
 import com.quad.closetdiary.domain.picture.Picture;
 import com.quad.closetdiary.domain.picture.PictureRepository;
 import lombok.RequiredArgsConstructor;
@@ -49,5 +50,9 @@ public class PictureService {
         Picture picture = pictureRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("해당 사진이 없습니다. id=" + id));
         pictureRepository.delete(picture);
+    }
+
+    public PictureRepository getPictureRepository() {
+        return pictureRepository;
     }
 }
