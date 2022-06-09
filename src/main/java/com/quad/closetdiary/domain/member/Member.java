@@ -13,7 +13,10 @@ import java.time.LocalDateTime;
 @Getter
 @NoArgsConstructor  //  기본 생성자 생성
 @Entity
-public class Member extends BaseTimeEntity {
+public class Member {
+    @Transient
+    private final String STR = "\nMember class\n";
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -21,6 +24,7 @@ public class Member extends BaseTimeEntity {
     @Column(length = 100, nullable = false) //  DB column
     private String name;
 
+    @Column(nullable = false)
     private Integer age;
 
     @Column(length = 100)
@@ -31,11 +35,23 @@ public class Member extends BaseTimeEntity {
         this.name = name;
         this.age = age;
         this.address = address;
+        System.out.println(STR + "constructor " + this);
     }
 
     public void update(String name, Integer age, String address) {
         this.name = name;
         this.age = age;
         this.address = address;
+        System.out.println(STR + "update " + this);
+    }
+
+    @Override
+    public String toString() {
+        return STR + "\nMember{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", address='" + address + '\'' +
+                '}';
     }
 }

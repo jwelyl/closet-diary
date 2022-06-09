@@ -185,6 +185,8 @@ let main = {
             address : $('#member-address').val()
         };
 
+        console.log(JSON.stringify(data));
+
         $.ajax({
             type : 'POST',
             url : '/api/v1/member',

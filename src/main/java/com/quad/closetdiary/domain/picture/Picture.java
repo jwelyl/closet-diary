@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor  //  기본 생성자 생성
 @Entity
-public class Picture extends BaseTimeEntity {
+public class Picture /*extends BaseTimeEntity*/ {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

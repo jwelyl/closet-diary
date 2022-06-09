@@ -16,7 +16,7 @@ public class ClothesListResponseDto {
     private Integer price;
     private String originPicName;
     private String picPath;
-    private LocalDateTime modifiedDate;
+//    private LocalDateTime modifiedDate;
 
     public ClothesListResponseDto(Clothes entity) {
         this.id = entity.getId();;
@@ -27,6 +27,6 @@ public class ClothesListResponseDto {
         this.price = entity.getPrice();
         this.originPicName = entity.getOriginPicName();
         this.picPath = entity.getPicPath();
-        this.modifiedDate = entity.getModifiedDate();
+//        this.modifiedDate = entity.getModifiedDate();
     }
 }

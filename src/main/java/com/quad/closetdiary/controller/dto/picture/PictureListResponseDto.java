@@ -12,7 +12,7 @@ public class PictureListResponseDto {
     private String fileName;
     private String filePath;
     private Integer fileSize;
-    private LocalDateTime modifiedDate;
+//    private LocalDateTime modifiedDate;
 
     public PictureListResponseDto(Picture entity) {
         this.id = entity.getId();
@@ -20,6 +20,6 @@ public class PictureListResponseDto {
         this.fileName = entity.getFileName();
         this.filePath = entity.getFilePath();
         this.fileSize = entity.getFileSize();
-        this.modifiedDate = entity.getModifiedDate();
+//        this.modifiedDate = entity.getModifiedDate();
     }
 }
