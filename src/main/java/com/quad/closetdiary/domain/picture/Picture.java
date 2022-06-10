@@ -35,7 +35,7 @@ public class Picture extends BaseTimeEntity {
         this.fileSize = fileSize;
     }
 
-    public void update(String fileName, String filePpath) {
+    public void update(String fileName, String filePath) {
         this.fileName = fileName;
         this.filePath = filePath;
     }
