@@ -68,42 +68,42 @@ public class ClothesApiController {
     @GetMapping("/clothes/select/top")
     public List<Clothes> selectTop() {
         return clothesService.getClothesRepository()
-                .findAll().stream().filter(a -> a.getCategory() == "상의")
+                .findAll().stream().filter(a -> a.getCategory().equals("상의"))
                 .collect(Collectors.toList());
     }
 
     @GetMapping("/clothes/select/bottom")
     public List<Clothes> selectBottom() {
         return clothesService.getClothesRepository()
-                .findAll().stream().filter(a -> a.getCategory() == "하의")
+                .findAll().stream().filter(a -> a.getCategory().equals("하의"))
                 .collect(Collectors.toList());
     }
 
     @GetMapping("/clothes/select/coat")
     public List<Clothes> selectCoat() {
         return clothesService.getClothesRepository()
-                .findAll().stream().filter(a -> a.getCategory() == "외투")
+                .findAll().stream().filter(a -> a.getCategory().equals("외투"))
                 .collect(Collectors.toList());
     }
 
     @GetMapping("/clothes/select/shoes")
     public List<Clothes> selectShoes() {
         return clothesService.getClothesRepository()
-                .findAll().stream().filter(a -> a.getCategory() == "신발")
+                .findAll().stream().filter(a -> a.getCategory().equals("신발"))
                 .collect(Collectors.toList());
     }
 
     @GetMapping("/clothes/select/bag")
     public List<Clothes> selectBag() {
         return clothesService.getClothesRepository()
-                .findAll().stream().filter(a -> a.getCategory() == "가방")
+                .findAll().stream().filter(a -> a.getCategory().equals("가방"))
                 .collect(Collectors.toList());
     }
 
     @GetMapping("/clothes/select/accessory")
     public List<Clothes> selectAccessory() {
         return clothesService.getClothesRepository()
-                .findAll().stream().filter(a -> a.getCategory() == "악세서리")
+                .findAll().stream().filter(a -> a.getCategory().equals("악세서리"))
                 .collect(Collectors.toList());
     }
 
