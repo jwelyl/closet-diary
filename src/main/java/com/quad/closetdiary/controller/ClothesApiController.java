@@ -101,7 +101,7 @@ public class ClothesApiController {
     }
 
     @GetMapping("/clothes/select/accessory")
-    public List<Clothes> selectAccesory() {
+    public List<Clothes> selectAccessory() {
         return clothesService.getClothesRepository()
                 .findAll().stream().filter(a -> a.getCategory() == "악세서리")
                 .collect(Collectors.toList());
