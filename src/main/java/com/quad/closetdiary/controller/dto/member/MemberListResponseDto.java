@@ -21,7 +21,7 @@ public class MemberListResponseDto {
         this.age = entity.getAge();
         this.address = entity.getAddress();
 //        this.modifiedDate = entity.getModifiedDate();
-        System.out.println(this);
+//        System.out.println(this);
     }
 
     @Override

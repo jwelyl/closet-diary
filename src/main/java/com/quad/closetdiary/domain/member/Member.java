@@ -35,14 +35,14 @@ public class Member extends BaseTimeEntity {
         this.name = name;
         this.age = age;
         this.address = address;
-        System.out.println(STR + "constructor " + this);
+//        System.out.println(STR + "constructor " + this);
     }
 
     public void update(String name, Integer age, String address) {
         this.name = name;
         this.age = age;
         this.address = address;
-        System.out.println(STR + "update " + this);
+//        System.out.println(STR + "update " + this);
     }
 
     @Override

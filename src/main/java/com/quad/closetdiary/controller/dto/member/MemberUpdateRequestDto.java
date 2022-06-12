@@ -19,8 +19,8 @@ public class MemberUpdateRequestDto {
         this.age = age;
         this.address = address;
 
-        System.out.println(this);
-        System.out.println("생성자");
+//        System.out.println(this);
+//        System.out.println("생성자");
     }
 
     @Override

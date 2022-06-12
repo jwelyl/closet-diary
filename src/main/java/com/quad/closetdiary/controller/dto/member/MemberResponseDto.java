@@ -18,9 +18,9 @@ public class MemberResponseDto {
         this.age = entity.getAge();
         this.address = entity.getAddress();
 
-        System.out.println(STR + "생성자\n");
-        System.out.println(entity);
-        System.out.println(this);
+//        System.out.println(STR + "생성자\n");
+//        System.out.println(entity);
+//        System.out.println(this);
     }
 
     @Override

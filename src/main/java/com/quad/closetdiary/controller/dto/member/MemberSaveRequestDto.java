@@ -19,8 +19,8 @@ public class MemberSaveRequestDto {
         this.name = name;
         this.age = age;
         this.address = address;
-        System.out.println(this);
-        System.out.println("생성자");
+//        System.out.println(this);
+//        System.out.println("생성자");
     }
 
     public Member toEntity() {
@@ -36,9 +36,9 @@ public class MemberSaveRequestDto {
                 .address(address)
                 .build();
 
-        System.out.println(STR);
-        System.out.println("toEntity()");
-        System.out.println(m);
+//        System.out.println(STR);
+//        System.out.println("toEntity()");
+//        System.out.println(m);
         return m;
     }
 

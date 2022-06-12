@@ -21,37 +21,37 @@ public class MemberService {
 
     @Transactional
     public Long save(MemberSaveRequestDto requestDto) {
-        System.out.println(STR + "save");
-        System.out.println(requestDto);
-        System.out.println(requestDto.toEntity());
+//        System.out.println(STR + "save");
+//        System.out.println(requestDto);
+//        System.out.println(requestDto.toEntity());
 
         return memberRepository.save(requestDto.toEntity()).getId();
     }
 
     @Transactional
     public Long update(Long id, MemberUpdateRequestDto requestDto) {
-        System.out.println(STR + "update");
+//        System.out.println(STR + "update");
         Member member = memberRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("해당 멤버가 없습니다. id=" + id));
 
-        System.out.println(requestDto);
+//        System.out.println(requestDto);
         member.update(requestDto.getName(), requestDto.getAge(), requestDto.getAddress());
 
         return id;
     }
 
     public MemberResponseDto findById(Long id) {
-        System.out.println(STR + "findById");
+//        System.out.println(STR + "findById");
         Member entity = memberRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("해당 멤버가 없습니다. id=" + id));
 
-        System.out.println(entity);
+//        System.out.println(entity);
         return new MemberResponseDto(entity);
     }
 
     @Transactional(readOnly = true)
     public List<MemberListResponseDto> findAll() {
-        System.out.println(STR + "findAll");
+//        System.out.println(STR + "findAll");
         return memberRepository.findAll().stream()
                 .map(MemberListResponseDto::new)
                 .collect(Collectors.toList());
@@ -59,11 +59,11 @@ public class MemberService {
 
     @Transactional
     public void delete(Long id) {
-        System.out.println(STR + "delete");
+//        System.out.println(STR + "delete");
         Member member = memberRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("해당 멤버가 없습니다. id=" + id));
 
-        System.out.println(member);
+//        System.out.println(member);
         memberRepository.delete(member);
     }
 

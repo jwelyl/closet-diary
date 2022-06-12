@@ -23,26 +23,26 @@ public class MemberApiController {
 
     @PostMapping("/api/v1/member")
     public Long save(@RequestBody MemberSaveRequestDto requestDto) {
-        System.out.println(STR + "저장된 내용\n" + requestDto);
+//        System.out.println(STR + "저장된 내용\n" + requestDto);
         return memberService.save(requestDto);
     }
 
     @PutMapping("/api/v1/member/{id}")
     public Long update(@PathVariable Long id, @RequestBody MemberUpdateRequestDto requestDto) {
-        System.out.println(STR + "업데이트된 id = " + id + "\n" + requestDto.toString());
+//        System.out.println(STR + "업데이트된 id = " + id + "\n" + requestDto.toString());
         return memberService.update(id, requestDto);
     }
 
     @GetMapping("/api/v1/member/{id}")
     public MemberResponseDto findById(@PathVariable Long id) {
-        System.out.println(STR + "검색된 id = " + id + "\n");
+//        System.out.println(STR + "검색된 id = " + id + "\n");
         return memberService.findById(id);
     }
 
     @DeleteMapping("/api/v1/member/{id}")
     public Long delete(@PathVariable Long id) {
         memberService.delete(id);
-        System.out.println(STR + "제거된 id = " + id);
+//        System.out.println(STR + "제거된 id = " + id);
         return id;
     }
 
@@ -52,7 +52,7 @@ public class MemberApiController {
 //    }
     @GetMapping("/api/v1/member")
     public List<MemberListResponseDto> all() {
-        System.out.println(STR + "모두 조회" );
+//        System.out.println(STR + "모두 조회" );
         return memberService.findAll();
     }
 
